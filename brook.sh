@@ -189,8 +189,8 @@ Set_port(){
 	while true
 		do
 		echo -e "请输入 Brook 端口 [1-65535]（端口不能重复，避免冲突）"
-		read -e -p "(默认: 2333):" bk_port
-		[[ -z "${bk_port}" ]] && bk_port="2333"
+		read -e -p "(默认: 45678):" bk_port
+		[[ -z "${bk_port}" ]] && bk_port="45678"
 		echo $((${bk_port}+0)) &>/dev/null
 		if [[ $? -eq 0 ]]; then
 			if [[ ${bk_port} -ge 1 ]] && [[ ${bk_port} -le 65535 ]]; then
@@ -208,8 +208,8 @@ Set_port(){
 }
 Set_passwd(){
 	echo "请输入 Brook 密码（因分享链接特性，密码请勿包含 % 符号）"
-	read -e -p "(默认: doub.io):" bk_passwd
-	[[ -z "${bk_passwd}" ]] && bk_passwd="doub.io"
+	read -e -p "(默认: super.tk):" bk_passwd
+	[[ -z "${bk_passwd}" ]] && bk_passwd="super.tk"
 	echo && echo "========================"
 	echo -e "	密码 : ${Red_background_prefix} ${bk_passwd} ${Font_color_suffix}"
 	echo "========================" && echo
